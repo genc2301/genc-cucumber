@@ -1,10 +1,12 @@
 package com.cogni.bdd.stepDefinition;
 
+import java.io.IOException;
+
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
+import cogni.genc.bdd.global.BaseClass;
+import cogni.genc.bdd.global.Hooks;
 import cogni.genc.bdd.pages.LoginPage;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -14,24 +16,12 @@ import io.cucumber.java.en.When;
 
 public class LoginPageSteps {
 
-	private WebDriver driver;
+	WebDriver driver;
 	private LoginPage loginPage;
-	
-	@Before
-	public void setup() {
-		driver = new ChromeDriver();
-		driver.manage().window().maximize();
-	}
-	
-	@After
-	public void tearDown() {
-		if(driver!=null) {
-			driver.quit();
-		}
-	}
 	
 	@Given("I am on the OpenCart login page")
 	public void i_am_on_the_open_cart_login_page() {
+		driver = BaseClass.getDriver();
 	    driver.get("https://naveenautomationlabs.com/opencart/index.php?route=account/login");
 	    loginPage = new LoginPage(driver);
 	}

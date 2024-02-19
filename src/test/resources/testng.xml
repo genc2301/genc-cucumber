@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="OpenCart Parallel Suite" verbose="2" parallel="classes" thread-count="5">
-  <test name="Login Page Test">
+  <test name="Resister Page Test">
   <classes>
-  <class name="cogni.genc.bdd.runners.OpenCartTest"/>
+  <class name="cogni.genc.bdd.runners.RegisterTest"/>
   </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
